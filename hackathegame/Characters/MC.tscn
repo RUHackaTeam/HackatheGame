@@ -1,25 +1,196 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb0gw8q5w1syq"]
+[gd_scene load_steps=14 format=3 uid="uid://bb0gw8q5w1syq"]
 
-[ext_resource type="Texture2D" uid="uid://bcvlf6pgma6ny" path="res://Characters/catpray.jpg" id="2_a4r7q"]
+[ext_resource type="Texture2D" uid="uid://cb7cyxkamkji1" path="res://Assets/Epsilon Movement SpriteSheet.png" id="1_ij3u4"]
 
 [sub_resource type="GDScript" id="GDScript_rkpcu"]
 script/source = "extends CharacterBody2D
 
-
+@onready var ap = $AnimationPlayer
 @export var speed = 150.0
 
 func get_input():
 	var input_direction = Input.get_vector(\"Left\",\"Right\",\"Up\",\"Down\")
 	velocity = input_direction * speed
 	
+	if input_direction.x == -1:
+		ap.play(\"Left_Walk\")
+	else: 
+		if input_direction.x == 1:
+			ap.play(\"Right_Walk\")
+		else:
+			if input_direction.y == -1:
+				ap.play(\"Back_Walk\")
+			else: 
+				if input_direction.y == 1:
+					ap.play(\"Front_Walk\")
+				else:
+					ap.play(\"Idle_Front\")
+	
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-	
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_inb1n"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v51hw"]
+
+[sub_resource type="Animation" id="Animation_fl3r1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pg4h1"]
+resource_name = "Back_Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_ph4j8"]
+resource_name = "Left_Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 13]
+}
+
+[sub_resource type="Animation" id="Animation_ld66n"]
+resource_name = "Front_Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_8wg5w"]
+resource_name = "Right_Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_otra6"]
+resource_name = "Idle_Front"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_2me63"]
+resource_name = "Idle_Left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_oa6rm"]
+resource_name = "Idle_Right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_nv6he"]
+resource_name = "Idle_Back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktqes"]
+_data = {
+"Back_Walk": SubResource("Animation_pg4h1"),
+"Front_Walk": SubResource("Animation_ld66n"),
+"Idle_Back": SubResource("Animation_nv6he"),
+"Idle_Front": SubResource("Animation_otra6"),
+"Idle_Left": SubResource("Animation_2me63"),
+"Idle_Right": SubResource("Animation_oa6rm"),
+"Left_Walk": SubResource("Animation_ph4j8"),
+"RESET": SubResource("Animation_fl3r1"),
+"Right_Walk": SubResource("Animation_8wg5w")
+}
 
 [node name="Mc" type="Node2D"]
 
@@ -29,13 +200,20 @@ script = SubResource("GDScript_rkpcu")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(1, 2)
-scale = Vector2(0.0568384, 0.0571429)
-texture = ExtResource("2_a4r7q")
+scale = Vector2(1.06108, 1.03571)
+texture = ExtResource("1_ij3u4")
+hframes = 8
+vframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(1, 2)
-shape = SubResource("RectangleShape2D_inb1n")
+position = Vector2(1, 3)
+shape = SubResource("CapsuleShape2D_v51hw")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1, 2)
 zoom = Vector2(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ktqes")
+}
