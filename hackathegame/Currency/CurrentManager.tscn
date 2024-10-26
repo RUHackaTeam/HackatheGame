@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be0vr1j132i8y"]
+
+[ext_resource type="Script" path="res://Currency/current_manager.gd" id="1_k2xw0"]
+
+[node name="CurrentManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k2xw0")
