@@ -1,3 +1,75 @@
-[gd_scene format=3 uid="uid://bttoiqeucxae7"]
+[gd_scene load_steps=3 format=3 uid="uid://bttoiqeucxae7"]
+
+[ext_resource type="Script" path="res://Battle/texture_rect.gd" id="1_6ackf"]
+[ext_resource type="Texture2D" uid="uid://c7l7i8bnytsx" path="res://Assets/icon.svg" id="1_f11lr"]
 
 [node name="Battle" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 151.0
+offset_top = 176.0
+offset_right = 317.0
+offset_bottom = 334.0
+texture = ExtResource("1_f11lr")
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 667.0
+offset_top = 184.0
+offset_right = 833.0
+offset_bottom = 342.0
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect2"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 395.0
+offset_top = 380.0
+offset_right = 561.0
+offset_bottom = 538.0
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect3"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 845.0
+offset_top = 387.0
+offset_right = 1011.0
+offset_bottom = 545.0
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect4"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
