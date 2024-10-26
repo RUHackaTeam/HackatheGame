@@ -1,3 +1,4 @@
+#TODO: CHANGE UI PREFERENCES FOR CURRENCY DISLPAY
 extends Node
 
 var amount: int = 0
