@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dqoq12k6tn4"]
+
+[node name="CurrencyLabel" type="Node2D"]

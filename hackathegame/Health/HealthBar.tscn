@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cghv1018gpvx6"]
+
+[ext_resource type="Script" path="res://Health/player.gd" id="2_5e3ta"]
+[ext_resource type="Texture2D" uid="uid://c7l7i8bnytsx" path="res://Assets/icon.svg" id="2_e51kp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyh1i"]
+bg_color = Color(1, 0.235286, 0.676641, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_um48h"]
+bg_color = Color(0.12549, 0.392157, 1, 1)
+
+[node name="HealthBar" type="Node2D"]
+position = Vector2(0, 2)
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(-312, -342)
+scale = Vector2(1.67969, 1.48437)
+texture = ExtResource("2_e51kp")
+centered = false
+offset = Vector2(400, 350)
+script = ExtResource("2_5e3ta")
+
+[node name="HealthBar" type="ProgressBar" parent="player"]
+offset_left = 384.0
+offset_top = 495.158
+offset_right = 548.0
+offset_bottom = 522.158
+theme_override_styles/background = SubResource("StyleBoxFlat_hyh1i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_um48h")
+step = 0.1
+value = 5.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="player"]
+offset_left = 412.577
+offset_top = 305.179
+offset_right = 471.577
+offset_bottom = 328.179
+text = "health: "
