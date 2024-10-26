@@ -1,7 +1,67 @@
-[gd_scene format=3 uid="uid://dc551l2xl3u16"]
+[gd_scene load_steps=8 format=3 uid="uid://dc551l2xl3u16"]
+
+[ext_resource type="Script" path="res://Health/death.gd" id="1_myiqx"]
+
+[sub_resource type="Gradient" id="Gradient_ct7nb"]
+offsets = PackedFloat32Array(0.504951)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_34c82"]
+gradient = SubResource("Gradient_ct7nb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_52a7v"]
+line_spacing = 10.0
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_axu1l"]
+font_size = 50
+
+[sub_resource type="SystemFont" id="SystemFont_f04no"]
+
+[sub_resource type="SystemFont" id="SystemFont_pnclj"]
 
 [node name="Death" type="Node2D"]
+script = ExtResource("1_myiqx")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 1156.0
+offset_bottom = 642.0
+texture = SubResource("GradientTexture1D_34c82")
+
+[node name="DeathLabel" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 28.0
+offset_right = 1041.0
+offset_bottom = 301.0
+theme_override_font_sizes/font_size = 200
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_52a7v")
+uppercase = true
+
+[node name="TipLabel" type="Label" parent="."]
+offset_left = 242.0
+offset_top = 305.0
+offset_right = 848.0
+offset_bottom = 397.0
+text = "TIP:"
+label_settings = SubResource("LabelSettings_axu1l")
+
+[node name="Respawn" type="Button" parent="."]
+offset_left = 693.0
+offset_top = 463.0
+offset_right = 986.0
+offset_bottom = 552.0
+theme_override_fonts/font = SubResource("SystemFont_f04no")
+theme_override_font_sizes/font_size = 50
+text = "RESPAWN"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 266.0
+offset_top = 467.0
+offset_right = 535.0
+offset_bottom = 547.0
+theme_override_fonts/font = SubResource("SystemFont_pnclj")
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
