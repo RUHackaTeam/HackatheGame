@@ -9,6 +9,9 @@ onready var currency_manager = $CurrencyManager
 func _ready():
 	currency_manager.connect("currency_changed", self, "_on_currency_changed")
 	
+	#Example: Setting currency manually
+	currency_manager.set_currency(500)
+	
 	#Example: Adding currency value 100
 	currency_manager.add_currency(100)
 	

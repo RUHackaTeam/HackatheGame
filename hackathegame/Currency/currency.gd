@@ -17,3 +17,7 @@ func spend_currency(value: int) -> bool:
 
 func get_currency() -> int:
 	return amount
+
+func set_currency(value: int) -> void:
+	amount = value
+	emit_signal("currency_changed", amount)
