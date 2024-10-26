@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://rtnlw752f0r6"]
+[gd_scene load_steps=2 format=3 uid="uid://rtnlw752f0r6"]
+
+[ext_resource type="PackedScene" uid="uid://bb0gw8q5w1syq" path="res://Characters/MC.tscn" id="1_2ic8t"]
 
 [node name="Overworld" type="Node2D"]
+
+[node name="Mc" parent="." instance=ExtResource("1_2ic8t")]
+position = Vector2(564, 334)
