@@ -6,7 +6,7 @@
 script/source = "extends CharacterBody2D
 
 
-@export var speed = 800.0
+@export var speed = 150.0
 
 func get_input():
 	var input_direction = Input.get_vector(\"Left\",\"Right\",\"Up\",\"Down\")
@@ -19,7 +19,7 @@ func _physics_process(_delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inb1n"]
-size = Vector2(568, 562)
+size = Vector2(32, 32)
 
 [node name="Mc" type="Node2D"]
 
@@ -28,9 +28,14 @@ position = Vector2(-1, -2)
 script = SubResource("GDScript_rkpcu")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(11, -4)
+position = Vector2(1, 2)
+scale = Vector2(0.0568384, 0.0571429)
 texture = ExtResource("2_a4r7q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(12, -4)
+position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_inb1n")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 2)
+zoom = Vector2(4, 4)
