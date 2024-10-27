@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://bb0gw8q5w1syq"]
+[gd_scene load_steps=30 format=3 uid="uid://bb0gw8q5w1syq"]
 
 [ext_resource type="Texture2D" uid="uid://cb7cyxkamkji1" path="res://Assets/Epsilon Movement SpriteSheet.png" id="1_ij3u4"]
+[ext_resource type="Script" path="res://Characters/account.gd" id="2_k7l1s"]
 
 [sub_resource type="GDScript" id="GDScript_rkpcu"]
 script/source = "extends CharacterBody2D
@@ -41,6 +42,10 @@ func update_animation_parameters():
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v51hw"]
 radius = 6.0
 height = 16.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_55umh"]
+line_spacing = 5.0
+font_size = 11
 
 [sub_resource type="Animation" id="Animation_pg4h1"]
 resource_name = "Back_Walk"
@@ -291,6 +296,15 @@ shape = SubResource("CapsuleShape2D_v51hw")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1, 2)
 zoom = Vector2(4, 4)
+
+[node name="Account" type="Label" parent="CharacterBody2D/Camera2D"]
+offset_left = 71.0
+offset_top = -78.0
+offset_right = 140.0
+offset_bottom = -55.0
+text = "Account: "
+label_settings = SubResource("LabelSettings_55umh")
+script = ExtResource("2_k7l1s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {

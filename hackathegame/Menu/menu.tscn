@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://blh8c41p0ddb"]
+
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_mfci4"]
+
+[sub_resource type="SystemFont" id="SystemFont_6nvn8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dx4ce"]
+font = SubResource("SystemFont_6nvn8")
+font_size = 45
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 14
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_mfci4")
+
+[node name="Enter" type="Button" parent="."]
+offset_left = 365.0
+offset_top = 402.0
+offset_right = 764.0
+offset_bottom = 502.0
+text = "<PRESS HERE>"
+
+[node name="TITLE" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 230.0
+offset_right = 1116.0
+offset_bottom = 449.0
+text = "WELCOME TO THE WORLD OF 
+CIRCUITS AND CATS :)"
+label_settings = SubResource("LabelSettings_dx4ce")
+horizontal_alignment = 1
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 652.0
