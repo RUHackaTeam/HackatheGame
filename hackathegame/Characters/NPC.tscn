@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqs886r2cqwra"]
+
+[ext_resource type="Script" path="res://Characters/character_body_2d.gd" id="1_2or8k"]
+[ext_resource type="Texture2D" uid="uid://dlqqete2g0x1a" path="res://Assets/Onion.png" id="2_6e4o6"]
+
+[sub_resource type="Animation" id="Animation_1gr37"]
+resource_name = "Onion Idle"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_iehum"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rr6k1"]
+_data = {
+"Onion Idle": SubResource("Animation_1gr37"),
+"RESET": SubResource("Animation_iehum")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lo8a6"]
+radius = 5.31393
+height = 25.3929
+
+[node name="Npc" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_2or8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_6e4o6")
+hframes = 3
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_rr6k1")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.0273211, 10.5043)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lo8a6")

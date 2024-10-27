@@ -6,7 +6,7 @@ func _get_drag_data(_at_position):
 	
 	preview_texture.texture = texture
 	preview_texture.expand_mode = 1
-	preview_texture.size = Vector2(30,30)
+	preview_texture.size = Vector2(64,64)
 	
 	var preview = Control.new()
 	preview.add_child(preview_texture)
@@ -14,7 +14,7 @@ func _get_drag_data(_at_position):
 	
 	set_drag_preview(preview)
 	texture = null
-	
+		
 	return preview_texture.texture
 
 func _can_drop_data(_pos, data):

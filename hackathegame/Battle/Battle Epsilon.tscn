@@ -1,0 +1,148 @@
+[gd_scene load_steps=18 format=3 uid="uid://dc0lj0mb5fh0n"]
+
+[ext_resource type="Script" path="res://Battle/character_body_2d.gd" id="1_6p4qg"]
+[ext_resource type="Texture2D" uid="uid://d3ntlu2flwstj" path="res://Assets/Battle Epsilon.png" id="2_b4460"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aryke"]
+radius = 10.1199
+height = 36.8181
+
+[sub_resource type="Animation" id="Animation_d484x"]
+resource_name = "Damage"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 12, 13, 12, 13, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_k5bgr"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_oqq5y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_r6n3a"]
+resource_name = "Shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.666667, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_es0j6"]
+_data = {
+"Damage": SubResource("Animation_d484x"),
+"Idle": SubResource("Animation_k5bgr"),
+"RESET": SubResource("Animation_oqq5y"),
+"Shoot": SubResource("Animation_r6n3a")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wk7lr"]
+animation = &"Damage"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gaf5m"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wxk4d"]
+animation = &"Shoot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ns2sr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_83urb"]
+advance_mode = 2
+advance_condition = &"damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gepn3"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a67gh"]
+advance_mode = 2
+advance_condition = &"shoot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c70pj"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ehpdu"]
+states/Damage/node = SubResource("AnimationNodeAnimation_wk7lr")
+states/Damage/position = Vector2(425, 57)
+states/Idle/node = SubResource("AnimationNodeAnimation_gaf5m")
+states/Idle/position = Vector2(309, 100)
+states/Shoot/node = SubResource("AnimationNodeAnimation_wxk4d")
+states/Shoot/position = Vector2(425, 164)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ns2sr"), "Idle", "Damage", SubResource("AnimationNodeStateMachineTransition_83urb"), "Damage", "Idle", SubResource("AnimationNodeStateMachineTransition_gepn3"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_a67gh"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_c70pj")]
+
+[node name="BattleEpsilon" type="Node2D"]
+position = Vector2(-0.472473, 0.787453)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_6p4qg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+scale = Vector2(4, 4)
+texture = ExtResource("2_b4460")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(1.05302, -4.00377)
+shape = SubResource("CapsuleShape2D_aryke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_es0j6")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+tree_root = SubResource("AnimationNodeStateMachine_ehpdu")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/damage = false
+parameters/conditions/idle = false
+parameters/conditions/shoot = false
