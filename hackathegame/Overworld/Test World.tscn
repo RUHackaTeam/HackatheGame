@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://rtnlw752f0r6"]
+[gd_scene load_steps=8 format=3 uid="uid://dcjdgiumbmm6q"]
 
 [ext_resource type="Texture2D" uid="uid://6s0m21rfhs6" path="res://Assets/Overworld Tile Sheet.png" id="1_5j44h"]
 [ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="2_fo7u5"]
 [ext_resource type="PackedScene" uid="uid://bb0gw8q5w1syq" path="res://Characters/MC.tscn" id="3_enei6"]
-[ext_resource type="PackedScene" uid="uid://8l42btsgqhrg" path="res://Shop/Shop Exterior.tscn" id="4_iiaoy"]
+[ext_resource type="PackedScene" uid="uid://igeqnbrv6d6n" path="res://Shop/Shop Exterior.tscn" id="4_iiaoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uj6fd"]
 texture = ExtResource("1_5j44h")
