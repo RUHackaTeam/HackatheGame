@@ -14,16 +14,11 @@ config/name="HackatheGame"
 run/main_scene="res://Health/HealthBar.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
+"<<<<<<<v5[autoload]Global"="*res://Currency/Global.gd"
 
-<<<<<<< v5
-[autoload]
-
-Global="*res://Currency/Global.gd"
-=======
 [editor]
 
 version_control/autoload_on_startup=true
->>>>>>> main
 
 [input]
 
