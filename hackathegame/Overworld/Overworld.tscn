@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://rtnlw752f0r6"]
+[gd_scene load_steps=9 format=3 uid="uid://rtnlw752f0r6"]
 
 [ext_resource type="PackedScene" uid="uid://bb0gw8q5w1syq" path="res://Characters/MC.tscn" id="1_2ic8t"]
+[ext_resource type="Script" path="res://Overworld/overworld.gd" id="1_ac0rx"]
 [ext_resource type="Texture2D" uid="uid://6s0m21rfhs6" path="res://Assets/Overworld Tile Sheet.png" id="1_dybrd"]
+[ext_resource type="PackedScene" uid="uid://c4v644j2axuvn" path="res://Characters/enemy_1.tscn" id="3_f02ox"]
+[ext_resource type="Script" path="res://Overworld/enemy_1.gd" id="4_fimy0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xeqi6"]
 texture = ExtResource("1_dybrd")
@@ -43,7 +46,11 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xeqi6")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yytux"]
+radius = 42.19
+
 [node name="Overworld" type="Node2D"]
+script = ExtResource("1_ac0rx")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_whbdd")
@@ -52,3 +59,25 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 1, 196608,
 
 [node name="Mc" parent="." instance=ExtResource("1_2ic8t")]
 position = Vector2(105, 59)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_f02ox")]
+position = Vector2(310, 181)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_fimy0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(310, 181)
+shape = SubResource("CircleShape2D_yytux")
+
+[node name="Label" type="Label" parent="Area2D"]
+offset_left = 276.0
+offset_top = 149.0
+offset_right = 347.0
+offset_bottom = 172.0
+scale = Vector2(0.99736, 0.847415)
+theme_override_font_sizes/font_size = 10
+text = "[enter] to fight"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
