@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://8l42btsgqhrg"]
+
+[ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="1_vcgvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iadgk"]
+size = Vector2(160, 128)
+
+[node name="ShopExterior" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_vcgvs")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_iadgk")

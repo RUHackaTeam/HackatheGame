@@ -14,3 +14,5 @@ script = ExtResource("1_maxyw")
 [node name="healingP" type="Sprite2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 128)
