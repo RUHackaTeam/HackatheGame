@@ -1,16 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://bddd43gv0cq2f"]
+[gd_scene load_steps=7 format=3 uid="uid://bddd43gv0cq2f"]
 
 [ext_resource type="Script" path="res://Shop/shop.gd" id="1_maxyw"]
+[ext_resource type="Texture2D" uid="uid://bgax242wp3ly8" path="res://Shop/download.jpg" id="2_hvaye"]
+
+[sub_resource type="Gradient" id="Gradient_wvoqd"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vkw4v"]
+gradient = SubResource("Gradient_wvoqd")
+
+[sub_resource type="Gradient" id="Gradient_httqv"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_37wm6"]
+gradient = SubResource("Gradient_httqv")
 
 [node name="Shop" type="Node2D"]
+position = Vector2(29, -6)
 script = ExtResource("1_maxyw")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(538.5, 178.078)
+scale = Vector2(3.44141, 280.156)
+texture = SubResource("GradientTexture1D_vkw4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(538, 484)
+scale = Vector2(3.40478, 259.312)
+texture = SubResource("GradientTexture1D_37wm6")
+
 [node name="Capacitor" type="Sprite2D" parent="."]
+position = Vector2(202.625, 189)
+scale = Vector2(0.150294, 0.139431)
+texture = ExtResource("2_hvaye")
+
+[node name="BuyCapacitor" type="Button" parent="Capacitor"]
+offset_left = 22.4561
+offset_top = 638.308
+offset_right = 481.456
+offset_bottom = 881.308
+metadata/_edit_use_anchors_ = true
 
 [node name="Resistor" type="Sprite2D" parent="."]
 
+[node name="BuyResistor" type="Button" parent="Resistor"]
+offset_left = 365.0
+offset_top = 269.0
+offset_right = 453.0
+offset_bottom = 313.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Voltage Source" type="Sprite2D" parent="."]
+
+[node name="BuyVS" type="Button" parent="Voltage Source"]
+offset_left = 509.0
+offset_top = 267.0
+offset_right = 611.0
+offset_bottom = 314.0
+metadata/_edit_use_anchors_ = true
 
 [node name="healingP" type="Sprite2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BuyHP" type="Button" parent="healingP"]
+offset_left = 752.0
+offset_top = 268.0
+offset_right = 893.0
+offset_bottom = 316.0
+metadata/_edit_use_anchors_ = true
+
+[node name="attackP" type="Sprite2D" parent="."]
+
+[node name="BuyCP" type="Button" parent="attackP"]
+offset_left = 845.0
+offset_top = 130.0
+offset_right = 922.0
+offset_bottom = 175.0
+metadata/_edit_use_anchors_ = true
