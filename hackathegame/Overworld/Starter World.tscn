@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdb4on5m367nr"]
+[gd_scene load_steps=9 format=3 uid="uid://cdb4on5m367nr"]
 
 [ext_resource type="Texture2D" uid="uid://6s0m21rfhs6" path="res://Assets/Overworld Tile Sheet.png" id="1_ep0af"]
 [ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="2_yb08a"]
 [ext_resource type="PackedScene" uid="uid://8l42btsgqhrg" path="res://Shop/Shop Exterior.tscn" id="3_qrg8x"]
 [ext_resource type="PackedScene" uid="uid://bb0gw8q5w1syq" path="res://Characters/MC.tscn" id="4_qnkuh"]
+[ext_resource type="Texture2D" uid="uid://bcvlf6pgma6ny" path="res://Assets/catpray.jpg" id="5_7mrwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xr3q"]
 texture = ExtResource("1_ep0af")
@@ -114,3 +115,8 @@ position = Vector2(832, 208)
 [node name="Mc" parent="." instance=ExtResource("4_qnkuh")]
 y_sort_enabled = true
 position = Vector2(128, 64)
+
+[node name="Catpray" type="Sprite2D" parent="."]
+position = Vector2(-48, 208)
+scale = Vector2(0.12377, 0.121185)
+texture = ExtResource("5_7mrwc")
