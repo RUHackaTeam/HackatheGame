@@ -1,10 +1,11 @@
 extends Button
 
-var price = 25
+var price = 10
 
 func _on_pressed() -> void:
-	if (Global.score - 25) >= 0:
+	if (Global.score - 10) >= 0:
 		Global.HealthPotion += 1
-		Global.score = Global.score - 25
+		Global.score = Global.score - 10
 	else:
-		print("YOU DON'T HAVE ENOUGH MONEY")
+		$Label.text = "you don't have enough money"
+		$Label.text ="10"

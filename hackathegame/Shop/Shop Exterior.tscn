@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8l42btsgqhrg"]
+[gd_scene load_steps=4 format=3 uid="uid://8l42btsgqhrg"]
 
 [ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="1_vcgvs"]
+[ext_resource type="Script" path="res://Shop/button.gd" id="2_gne2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iadgk"]
 size = Vector2(160, 128)
@@ -17,3 +18,14 @@ region_rect = Rect2(0, 0, 160, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_iadgk")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -73.0
+offset_top = 7.0
+offset_right = 10.0
+offset_bottom = 61.0
+text = "ENTER
+(Click Me)"
+script = ExtResource("2_gne2d")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
