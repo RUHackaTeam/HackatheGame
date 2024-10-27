@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c53m1cy0f0xvp"]
+
+[ext_resource type="Script" path="res://Currency/exampleCurrency.gd" id="1_pke85"]
+[ext_resource type="Script" path="res://Currency/CurrencyManager.gd" id="2_58w1l"]
+
+[node name="Attempt" type="Node2D"]
+script = ExtResource("1_pke85")
+
+[node name="CurrencyCounter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_58w1l")
+
+[node name="CurrencyLabel" type="Label" parent="CurrencyCounter"]
+layout_mode = 0
+offset_left = 980.0
+offset_top = 94.0
+offset_right = 1127.0
+offset_bottom = 126.0
+text = "Amount: "
