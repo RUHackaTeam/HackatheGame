@@ -1,60 +1,76 @@
-[gd_scene load_steps=7 format=3 uid="uid://bddd43gv0cq2f"]
+[gd_scene load_steps=10 format=3 uid="uid://bddd43gv0cq2f"]
 
 [ext_resource type="Script" path="res://Shop/shop.gd" id="1_maxyw"]
-[ext_resource type="Texture2D" uid="uid://bgax242wp3ly8" path="res://Shop/download.jpg" id="2_hvaye"]
+[ext_resource type="Script" path="res://Shop/capacitor.gd" id="2_ggtx8"]
+[ext_resource type="Script" path="res://Shop/resistor.gd" id="3_bikik"]
+[ext_resource type="Script" path="res://Shop/wire.gd" id="4_ucg5g"]
+[ext_resource type="Script" path="res://Shop/hp.gd" id="5_lm24m"]
+[ext_resource type="Script" path="res://Shop/cp.gd" id="6_b6n6m"]
+[ext_resource type="Script" path="res://Shop/amount.gd" id="7_7pkjg"]
 
-[sub_resource type="Gradient" id="Gradient_wvoqd"]
+[sub_resource type="Gradient" id="Gradient_qf4o8"]
+offsets = PackedFloat32Array(0.455446)
+colors = PackedColorArray(0.686275, 0.584314, 0.411765, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vkw4v"]
-gradient = SubResource("Gradient_wvoqd")
-
-[sub_resource type="Gradient" id="Gradient_httqv"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_37wm6"]
-gradient = SubResource("Gradient_httqv")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p8pom"]
+gradient = SubResource("Gradient_qf4o8")
 
 [node name="Shop" type="Node2D"]
-position = Vector2(29, -6)
+position = Vector2(7, 2)
 script = ExtResource("1_maxyw")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(538.5, 178.078)
-scale = Vector2(3.44141, 280.156)
-texture = SubResource("GradientTexture1D_vkw4v")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(538, 484)
-scale = Vector2(3.40478, 259.312)
-texture = SubResource("GradientTexture1D_37wm6")
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_right = 1144.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture1D_p8pom")
 
 [node name="Capacitor" type="Sprite2D" parent="."]
-position = Vector2(202.625, 189)
-scale = Vector2(0.150294, 0.139431)
-texture = ExtResource("2_hvaye")
+position = Vector2(135, 283)
+scale = Vector2(0.173971, 0.123158)
 
 [node name="BuyCapacitor" type="Button" parent="Capacitor"]
-offset_left = 22.4561
-offset_top = 638.308
-offset_right = 481.456
-offset_bottom = 881.308
+anchors_preset = -1
+anchor_left = -0.388824
+anchor_top = 0.283325
+anchor_right = 296.611
+anchor_bottom = 675.283
+offset_left = 552.206
+offset_top = -170.795
+offset_right = 1313.21
+offset_bottom = 72.2045
+theme_override_font_sizes/font_size = 100
+text = "capacitors - $25"
+script = ExtResource("2_ggtx8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Resistor" type="Sprite2D" parent="."]
 
 [node name="BuyResistor" type="Button" parent="Resistor"]
-offset_left = 365.0
-offset_top = 269.0
-offset_right = 453.0
-offset_bottom = 313.0
+anchors_preset = -1
+anchor_top = 3.0
+anchor_right = 82.0
+anchor_bottom = 73.0
+offset_left = 464.0
+offset_top = 340.0
+offset_right = 580.0
+offset_bottom = 384.0
+text = "resistors - $50"
+script = ExtResource("3_bikik")
 metadata/_edit_use_anchors_ = true
 
-[node name="Voltage Source" type="Sprite2D" parent="."]
+[node name="Wire" type="Sprite2D" parent="."]
 
-[node name="BuyVS" type="Button" parent="Voltage Source"]
-offset_left = 509.0
-offset_top = 267.0
-offset_right = 611.0
-offset_bottom = 314.0
+[node name="BuyWire" type="Button" parent="Wire"]
+anchors_preset = -1
+anchor_right = 98.0
+anchor_bottom = 64.0
+offset_left = 461.0
+offset_top = 191.0
+offset_right = 563.0
+offset_bottom = 238.0
+text = "Wire - $80"
+script = ExtResource("4_ucg5g")
 metadata/_edit_use_anchors_ = true
 
 [node name="healingP" type="Sprite2D" parent="."]

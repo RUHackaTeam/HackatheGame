@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://bddd43gv0cq2f"]
+
+[ext_resource type="Script" path="res://Shop/capacitor.gd" id="2_ggtx8"]
+[ext_resource type="Script" path="res://Shop/resistor.gd" id="3_bikik"]
+[ext_resource type="Script" path="res://Shop/wire.gd" id="4_ucg5g"]
+[ext_resource type="Script" path="res://Shop/hp.gd" id="5_lm24m"]
+[ext_resource type="Script" path="res://Shop/cp.gd" id="6_b6n6m"]
+
+[node name="Shop" type="Node2D"]
+position = Vector2(7, 2)
+
+[node name="Capacitor" type="Sprite2D" parent="."]
+position = Vector2(135, 283)
+scale = Vector2(0.173971, 0.123158)
+
+[node name="BuyCapacitor" type="Button" parent="Capacitor"]
+anchors_preset = -1
+anchor_left = -0.0912781
+anchor_top = 0.493286
+anchor_right = -0.0912781
+anchor_bottom = 195.493
+offset_left = -247.077
+offset_top = -877.412
+offset_right = 513.923
+offset_bottom = -634.412
+theme_override_font_sizes/font_size = 100
+text = "capacitors - $25"
+script = ExtResource("2_ggtx8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resistor" type="Sprite2D" parent="."]
+
+[node name="BuyResistor" type="Button" parent="Resistor"]
+offset_left = 262.0
+offset_top = 246.0
+offset_right = 350.0
+offset_bottom = 290.0
+text = "resistors - $50"
+script = ExtResource("3_bikik")
+metadata/_edit_use_anchors_ = true
+
+[node name="Wire" type="Sprite2D" parent="."]
+
+[node name="BuyWire" type="Button" parent="Wire"]
+anchors_preset = -1
+anchor_right = 49.0
+offset_left = 378.0
+offset_top = 307.0
+offset_right = 480.0
+offset_bottom = 354.0
+text = "Wire - $80"
+script = ExtResource("4_ucg5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="healingP" type="Sprite2D" parent="."]
+
+[node name="BuyHP" type="Button" parent="healingP"]
+offset_left = 510.0
+offset_top = 356.0
+offset_right = 665.0
+offset_bottom = 404.0
+text = "Health Potion - $25"
+script = ExtResource("5_lm24m")
+metadata/_edit_use_anchors_ = true
+
+[node name="attackP" type="Sprite2D" parent="."]
+
+[node name="BuyCP" type="Button" parent="attackP"]
+offset_left = 641.0
+offset_top = 411.0
+offset_right = 794.0
+offset_bottom = 456.0
+text = "Attack Potion - $75"
+script = ExtResource("6_b6n6m")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Capacitor/BuyCapacitor" to="Capacitor/BuyCapacitor" method="_on_pressed"]
+[connection signal="pressed" from="Resistor/BuyResistor" to="Resistor/BuyResistor" method="_on_pressed"]
+[connection signal="pressed" from="Wire/BuyWire" to="Wire/BuyWire" method="_on_pressed"]
+[connection signal="pressed" from="healingP/BuyHP" to="healingP/BuyHP" method="_on_pressed"]
+[connection signal="pressed" from="attackP/BuyCP" to="attackP/BuyCP" method="_on_pressed"]

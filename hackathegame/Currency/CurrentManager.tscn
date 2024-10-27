@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://be0vr1j132i8y"]
+[gd_scene load_steps=2 format=3 uid="uid://du6dy2p3sbtgd"]
 
 [ext_resource type="Script" path="res://Currency/current_manager.gd" id="1_k2xw0"]
 
@@ -6,3 +6,29 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_k2xw0")
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 172.0
+offset_right = 275.0
+offset_bottom = 195.0
+
+[node name="decrease" type="Button" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 202.0
+offset_right = 337.0
+offset_bottom = 253.0
+text = "-1"
+
+[node name="change" type="Button" parent="."]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 203.0
+offset_right = 543.0
+offset_bottom = 246.0
+text = "CHANGE"
+
+[connection signal="pressed" from="decrease" to="." method="_on_decrease_pressed"]
+[connection signal="pressed" from="change" to="." method="_on_change_pressed"]

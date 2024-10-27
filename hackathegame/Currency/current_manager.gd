@@ -1,29 +1,10 @@
 extends Control
 
-var amount: int = 0
+func _process(delta) -> void:
+	$score.text = "Amount: " + str(Global.score)
 
-signal currency_change(amount)
+func _on_change_pressed() -> void:
+	get_tree().change_scene_to_file("res://Currency/Currency.tscn")
 
-func _ready() -> void:
-	set_currency(100) # give the user some currency for component in the beginning
-	
-func add_currency(value: int) -> void:
-	amount += value
-	$CurrencyLabel.text = "Amount: " + str(amount)
-	emit_signal("currency_change", amount)
-
-func spend_currency(value: int) -> bool:
-	if amount >= value:
-		amount -= value
-		$CurrencyLabel.text = "Amount: " + str(amount)
-		emit_signal("currency_changed", amount)
-		return true
-	return false
-
-func get_currency() -> int:
-	return amount
-
-func set_currency(value: int) -> void:
-	amount = value
-	$CurrencyLabel.text = "Amount: " + str(amount)
-	emit_signal("currency_changed", amount)
+func _on_decrease_pressed() -> void:
+	Global.score -= 1
