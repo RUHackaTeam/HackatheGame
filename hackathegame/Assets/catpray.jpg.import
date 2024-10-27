@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcvlf6pgma6ny"
-path="res://.godot/imported/catpray.jpg-1dd46a4c096bebc0e57734f683576795.ctex"
+path="res://.godot/imported/catpray.jpg-7e92d5347cb944a04e065f6060c9111e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/catpray.jpg"
-dest_files=["res://.godot/imported/catpray.jpg-1dd46a4c096bebc0e57734f683576795.ctex"]
+source_file="res://Assets/catpray.jpg"
+dest_files=["res://.godot/imported/catpray.jpg-7e92d5347cb944a04e065f6060c9111e.ctex"]
 
 [params]
 
