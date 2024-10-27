@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckjbhfe21tsfe"]
+[gd_scene load_steps=5 format=3 uid="uid://b4kefb3sgdqax"]
 
 [ext_resource type="PackedScene" uid="uid://bb0gw8q5w1syq" path="res://Characters/MC.tscn" id="1_2ic8t"]
 [ext_resource type="Texture2D" uid="uid://6s0m21rfhs6" path="res://Assets/Overworld Tile Sheet.png" id="1_dybrd"]
