@@ -30,4 +30,4 @@ func damage() -> void:
 		update_health_ui()
 
 func trigger_death_scene() -> void:
-	get_tree().change_scene("res://Health/Death.tscn")
+	get_tree().change_scene_to_file("res://Health/Death.tscn")
