@@ -22,6 +22,7 @@ Global="*res://Currency/Global.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [editor]
@@ -65,4 +66,4 @@ Click={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.094351, 0.0909486, 0.131094, 1)
+environment/defaults/default_clear_color=Color(0.0564654, 0.056951, 0.119167, 1)

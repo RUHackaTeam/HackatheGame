@@ -1,37 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bttoiqeucxae7"]
+[gd_scene load_steps=9 format=3 uid="uid://bttoiqeucxae7"]
 
 [ext_resource type="Script" path="res://Battle/texture_rect.gd" id="1_6ackf"]
-[ext_resource type="Texture2D" uid="uid://c7l7i8bnytsx" path="res://Assets/icon.svg" id="1_f11lr"]
+[ext_resource type="Script" path="res://Battle/battle.gd" id="1_kr4em"]
+[ext_resource type="Texture2D" uid="uid://cdkappa6ycd5m" path="res://Assets/Resistor.png" id="4_fcp2o"]
+[ext_resource type="Texture2D" uid="uid://cjqfoxofv2ngx" path="res://Assets/Battle Background.png" id="4_uyi1s"]
+[ext_resource type="PackedScene" uid="uid://dc0lj0mb5fh0n" path="res://Battle/Battle Epsilon.tscn" id="5_4xbsd"]
+[ext_resource type="Texture2D" uid="uid://bjdvi2vgep2xq" path="res://Assets/Wire.png" id="7_fcwb1"]
+[ext_resource type="Texture2D" uid="uid://fnt51q0oabrd" path="res://Assets/Capacitor.png" id="8_j463n"]
+[ext_resource type="Texture2D" uid="uid://bcvlf6pgma6ny" path="res://Assets/catpray.jpg" id="8_xtb7k"]
 
 [node name="Battle" type="Node2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 151.0
-offset_top = 176.0
-offset_right = 317.0
-offset_bottom = 334.0
-texture = ExtResource("1_f11lr")
-expand_mode = 1
-script = ExtResource("1_6ackf")
-metadata/_edit_group_ = true
-
-[node name="Panel" type="Panel" parent="TextureRect"]
-show_behind_parent = true
-layout_mode = 0
-offset_right = 166.0
-offset_bottom = 159.0
-mouse_filter = 2
+position = Vector2(576, 324)
+script = ExtResource("1_kr4em")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 667.0
-offset_top = 184.0
-offset_right = 833.0
-offset_bottom = 342.0
+custom_minimum_size = Vector2(32, 32)
+offset_left = -525.0
+offset_top = 15.0
+offset_right = -359.0
+offset_bottom = 173.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_j463n")
 expand_mode = 1
 script = ExtResource("1_6ackf")
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="TextureRect2"]
 show_behind_parent = true
@@ -40,15 +33,48 @@ offset_right = 166.0
 offset_bottom = 159.0
 mouse_filter = 2
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 395.0
-offset_top = 380.0
-offset_right = 561.0
-offset_bottom = 538.0
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BattleBackground" type="Sprite2D" parent="Camera2D"]
+z_index = -2
+texture = ExtResource("4_uyi1s")
+
+[node name="BattleEpsilon" parent="." instance=ExtResource("5_4xbsd")]
+position = Vector2(-320.472, -163.213)
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -524.5
+offset_top = 110.5
+offset_right = -358.5
+offset_bottom = 268.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fcp2o")
 expand_mode = 1
 script = ExtResource("1_6ackf")
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect4"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -429.0
+offset_top = 15.0
+offset_right = -263.0
+offset_bottom = 173.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_j463n")
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="TextureRect3"]
 show_behind_parent = true
@@ -56,18 +82,126 @@ layout_mode = 0
 offset_right = 166.0
 offset_bottom = 159.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect4" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 845.0
-offset_top = 387.0
-offset_right = 1011.0
-offset_bottom = 545.0
+[node name="TextureRect5" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -428.5
+offset_top = 110.5
+offset_right = -262.5
+offset_bottom = 268.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fcp2o")
 expand_mode = 1
 script = ExtResource("1_6ackf")
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="TextureRect4"]
+[node name="Panel" type="Panel" parent="TextureRect5"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -524.5
+offset_top = 206.5
+offset_right = -358.5
+offset_bottom = 364.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_fcwb1")
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect6"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -428.5
+offset_top = 206.5
+offset_right = -262.5
+offset_bottom = 364.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_fcwb1")
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect7"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+
+[node name="Catpray" type="Sprite2D" parent="."]
+position = Vector2(284.75, -164)
+scale = Vector2(0.443162, 0.442857)
+texture = ExtResource("8_xtb7k")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -140.5
+offset_top = 110.5
+offset_right = 25.5
+offset_bottom = 268.5
+scale = Vector2(0.5, 0.5)
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect8"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = -41.5
+offset_top = 110.5
+offset_right = 124.5
+offset_bottom = 268.5
+scale = Vector2(0.5, 0.5)
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect9"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 159.0
+mouse_filter = 2
+
+[node name="TextureRect10" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_left = 58.25
+offset_top = 110.75
+offset_right = 224.25
+offset_bottom = 268.75
+scale = Vector2(0.5, 0.5)
+expand_mode = 1
+script = ExtResource("1_6ackf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextureRect10"]
 show_behind_parent = true
 layout_mode = 0
 offset_right = 166.0
