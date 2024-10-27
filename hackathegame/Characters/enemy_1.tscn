@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4v644j2axuvn"]
+
+[ext_resource type="Texture2D" uid="uid://ccvijjfah3bdd" path="res://Assets/smugcat.jpg" id="1_i7vdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0d27"]
+size = Vector2(734, 686)
+
+[node name="Enemy1" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.057, 0.057)
+texture = ExtResource("1_i7vdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(0.057, 0.057)
+shape = SubResource("RectangleShape2D_j0d27")
