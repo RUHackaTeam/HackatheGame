@@ -59,18 +59,3 @@ metadata/_edit_use_anchors_ = true
 
 [node name="healingP" type="Sprite2D" parent="."]
 
-[node name="BuyHP" type="Button" parent="healingP"]
-offset_left = 752.0
-offset_top = 268.0
-offset_right = 893.0
-offset_bottom = 316.0
-metadata/_edit_use_anchors_ = true
-
-[node name="attackP" type="Sprite2D" parent="."]
-
-[node name="BuyCP" type="Button" parent="attackP"]
-offset_left = 845.0
-offset_top = 130.0
-offset_right = 922.0
-offset_bottom = 175.0
-metadata/_edit_use_anchors_ = true
