@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://igeqnbrv6d6n"]
+[gd_scene load_steps=5 format=3 uid="uid://igeqnbrv6d6n"]
 
+[ext_resource type="Script" path="res://Shop/shop_exterior.gd" id="1_hifuv"]
 [ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="1_vcgvs"]
+[ext_resource type="Script" path="res://Shop/area_2d.gd" id="3_ml484"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iadgk"]
 size = Vector2(160, 128)
 
 [node name="ShopExterior" type="Node2D"]
+script = ExtResource("1_hifuv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 y_sort_enabled = true
@@ -15,5 +18,10 @@ texture = ExtResource("1_vcgvs")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 128)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+script = ExtResource("3_ml484")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
 shape = SubResource("RectangleShape2D_iadgk")
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_entered"]

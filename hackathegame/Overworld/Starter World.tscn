@@ -111,6 +111,7 @@ layer_2/tile_data = PackedInt32Array(655369, 327681, 2, 655368, 327681, 3, 58983
 [node name="ShopExterior" parent="." instance=ExtResource("3_qrg8x")]
 y_sort_enabled = true
 position = Vector2(832, 208)
+script = null
 
 [node name="Mc" parent="." instance=ExtResource("4_qnkuh")]
 y_sort_enabled = true

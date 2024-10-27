@@ -5,4 +5,4 @@ func _ready() -> void:
 	$Enter.text = "Press [Enter] or [Space]"
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('ui_accept') :
-		get_tree().change_scene_to_file("res://Overworld/Overworld.tscn")
+		get_tree().change_scene_to_file("res://Overworld/Starter World.tscn")

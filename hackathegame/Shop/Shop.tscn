@@ -1,134 +1,138 @@
-[gd_scene load_steps=10 format=3 uid="uid://bddd43gv0cq2f"]
+[gd_scene load_steps=10 format=3 uid="uid://jb64fcgn2m2n"]
 
-[ext_resource type="Script" path="res://Shop/shop.gd" id="1_maxyw"]
 [ext_resource type="Script" path="res://Shop/capacitor.gd" id="2_ggtx8"]
 [ext_resource type="Script" path="res://Shop/resistor.gd" id="3_bikik"]
 [ext_resource type="Script" path="res://Shop/wire.gd" id="4_ucg5g"]
 [ext_resource type="Script" path="res://Shop/hp.gd" id="5_lm24m"]
+[ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="6_34f5w"]
 [ext_resource type="Script" path="res://Shop/cp.gd" id="6_b6n6m"]
-[ext_resource type="Script" path="res://Shop/amount.gd" id="7_7pkjg"]
+[ext_resource type="Script" path="res://Shop/amount_label.gd" id="7_cmq6r"]
 
-[sub_resource type="Gradient" id="Gradient_qf4o8"]
-offsets = PackedFloat32Array(0.455446)
-colors = PackedColorArray(0.686275, 0.584314, 0.411765, 1)
+[sub_resource type="Gradient" id="Gradient_20j8f"]
+offsets = PackedFloat32Array(0.524752)
+colors = PackedColorArray(0.964792, 0.539444, 0.369327, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_p8pom"]
-gradient = SubResource("Gradient_qf4o8")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o2cp1"]
+gradient = SubResource("Gradient_20j8f")
 
 [node name="Shop" type="Node2D"]
-position = Vector2(7, 2)
-script = ExtResource("1_maxyw")
-
-[node name="Background" type="TextureRect" parent="."]
-offset_left = -6.0
-offset_right = 1144.0
-offset_bottom = 648.0
-texture = SubResource("GradientTexture1D_p8pom")
 
 [node name="Capacitor" type="Sprite2D" parent="."]
-position = Vector2(135, 283)
-scale = Vector2(0.173971, 0.123158)
 
-[node name="BuyCapacitor" type="Button" parent="Capacitor"]
-anchors_preset = -1
-anchor_left = -0.388824
-anchor_top = 0.283325
-anchor_right = 296.611
-anchor_bottom = 675.283
-offset_left = 552.206
-offset_top = -170.795
-offset_right = 1313.21
-offset_bottom = 72.2045
-theme_override_font_sizes/font_size = 100
-text = "capacitors - $25"
+[node name="BuyCap" type="Button" parent="Capacitor"]
+offset_left = 520.0
+offset_top = 192.0
+offset_right = 752.0
+offset_bottom = 256.0
 script = ExtResource("2_ggtx8")
-metadata/_edit_use_anchors_ = true
 
 [node name="Resistor" type="Sprite2D" parent="."]
 
-[node name="BuyResistor" type="Button" parent="Resistor"]
-anchors_preset = -1
-anchor_top = 3.0
-anchor_right = 82.0
-anchor_bottom = 73.0
-offset_left = 464.0
-offset_top = 340.0
-offset_right = 580.0
-offset_bottom = 384.0
-text = "resistors - $50"
+[node name="BuyRes" type="Button" parent="Resistor"]
+offset_left = 520.0
+offset_top = 384.0
+offset_right = 752.0
+offset_bottom = 448.0
 script = ExtResource("3_bikik")
-metadata/_edit_use_anchors_ = true
 
 [node name="Wire" type="Sprite2D" parent="."]
 
 [node name="BuyWire" type="Button" parent="Wire"]
-anchors_preset = -1
-anchor_right = 98.0
-anchor_bottom = 64.0
-offset_left = 461.0
-offset_top = 191.0
-offset_right = 563.0
-offset_bottom = 238.0
-text = "Wire - $80"
+offset_left = 800.0
+offset_top = 384.0
+offset_right = 1032.0
+offset_bottom = 448.0
 script = ExtResource("4_ucg5g")
-metadata/_edit_use_anchors_ = true
 
-[node name="healingP" type="Sprite2D" parent="."]
+[node name="HealthPotion" type="Sprite2D" parent="."]
 
-<<<<<<< v5
-[node name="BuyHP" type="Button" parent="healingP"]
-anchors_preset = -1
-anchor_right = 49.0
-anchor_bottom = 71.0
-offset_left = 718.0
-offset_top = 341.0
-offset_right = 873.0
-offset_bottom = 389.0
-text = "Health Potion - $25"
+[node name="BuyHP" type="Button" parent="HealthPotion"]
+offset_left = 288.0
+offset_top = 384.0
+offset_right = 472.0
+offset_bottom = 448.0
 script = ExtResource("5_lm24m")
-metadata/_edit_use_anchors_ = true
 
-[node name="attackP" type="Sprite2D" parent="."]
+[node name="AttackPotion" type="Sprite2D" parent="."]
 
-[node name="BuyCP" type="Button" parent="attackP"]
-anchors_preset = -1
-anchor_top = -6.0
-anchor_right = 41.0
-anchor_bottom = 67.0
-offset_left = 724.0
-offset_top = 203.0
-offset_right = 877.0
-offset_bottom = 248.0
-text = "Attack Potion - $75"
+[node name="BuyAP" type="Button" parent="AttackPotion"]
+offset_left = 288.0
+offset_top = 192.0
+offset_right = 471.0
+offset_bottom = 256.0
 script = ExtResource("6_b6n6m")
-metadata/_edit_use_anchors_ = true
 
-[node name="Amount" type="Label" parent="."]
-offset_left = 787.0
-offset_top = 9.0
-offset_right = 1128.0
-offset_bottom = 146.0
-theme_override_font_sizes/font_size = 50
-script = ExtResource("7_7pkjg")
+[node name="ShopItemsAndStore" type="Sprite2D" parent="."]
+position = Vector2(980.125, 324.125)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(0, 192, 32, 32)
+
+[node name="ShopItemsAndStore2" type="Sprite2D" parent="."]
+position = Vector2(860.125, 324.125)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(32, 192, 32, 32)
+
+[node name="ShopItemsAndStore3" type="Sprite2D" parent="."]
+position = Vector2(696, 325.125)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(32, 128, 32, 32)
+
+[node name="ShopItemsAndStore4" type="Sprite2D" parent="."]
+position = Vector2(578, 324.125)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(0, 128, 32, 32)
+
+[node name="ShopItemsAndStore5" type="Sprite2D" parent="."]
+position = Vector2(384, 136)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(128, 192, 32, 32)
+
+[node name="ShopItemsAndStore6" type="Sprite2D" parent="."]
+position = Vector2(381, 332.125)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(128, 160, 32, 32)
+
+[node name="ShopItemsAndStore7" type="Sprite2D" parent="."]
+position = Vector2(584, 136)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(0, 160, 32, 32)
+
+[node name="ShopItemsAndStore8" type="Sprite2D" parent="."]
+position = Vector2(696, 136)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("6_34f5w")
+region_enabled = true
+region_rect = Rect2(32, 160, 32, 32)
+
+[node name="AmountLabel" type="Label" parent="."]
+offset_left = 832.0
+offset_top = 80.0
+offset_right = 1096.0
+offset_bottom = 192.0
+script = ExtResource("7_cmq6r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -30
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture1D_o2cp1")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 9.0
-offset_top = 534.0
-offset_right = 151.0
-offset_bottom = 625.0
-text = "BACK TO THE OVERWORLD"
-
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 13.0
-offset_top = 83.0
-offset_right = 192.0
-offset_bottom = 493.0
-text = "History:"
-
-[connection signal="pressed" from="Capacitor/BuyCapacitor" to="Capacitor/BuyCapacitor" method="_on_pressed"]
-[connection signal="pressed" from="Resistor/BuyResistor" to="Resistor/BuyResistor" method="_on_pressed"]
-[connection signal="pressed" from="Wire/BuyWire" to="Wire/BuyWire" method="_on_pressed"]
-[connection signal="pressed" from="healingP/BuyHP" to="healingP/BuyHP" method="_on_pressed"]
-[connection signal="pressed" from="attackP/BuyCP" to="attackP/BuyCP" method="_on_pressed"]
-=======
->>>>>>> main
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 208.0
+offset_bottom = 640.0
