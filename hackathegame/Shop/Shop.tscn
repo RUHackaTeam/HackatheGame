@@ -1,134 +1,253 @@
-[gd_scene load_steps=10 format=3 uid="uid://bddd43gv0cq2f"]
+[gd_scene load_steps=16 format=3 uid="uid://7v12j28ur5il"]
 
-[ext_resource type="Script" path="res://Shop/shop.gd" id="1_maxyw"]
-[ext_resource type="Script" path="res://Shop/capacitor.gd" id="2_ggtx8"]
-[ext_resource type="Script" path="res://Shop/resistor.gd" id="3_bikik"]
-[ext_resource type="Script" path="res://Shop/wire.gd" id="4_ucg5g"]
-[ext_resource type="Script" path="res://Shop/hp.gd" id="5_lm24m"]
-[ext_resource type="Script" path="res://Shop/cp.gd" id="6_b6n6m"]
-[ext_resource type="Script" path="res://Shop/amount.gd" id="7_7pkjg"]
+[ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="1_nsxot"]
+[ext_resource type="Script" path="res://Shop/wire.gd" id="2_1hpsh"]
+[ext_resource type="Script" path="res://Shop/amount_label.gd" id="2_6rwob"]
+[ext_resource type="Script" path="res://Shop/label.gd" id="2_tjoeb"]
+[ext_resource type="Script" path="res://Shop/capacitor.gd" id="3_ma4ri"]
+[ext_resource type="Script" path="res://Shop/label2.gd" id="4_2wwy1"]
+[ext_resource type="Script" path="res://Shop/resistor.gd" id="4_tli3u"]
+[ext_resource type="Script" path="res://Shop/cp.gd" id="5_r1087"]
+[ext_resource type="Script" path="res://Shop/label3.gd" id="6_7cjxo"]
+[ext_resource type="Script" path="res://Shop/hp.gd" id="6_7jxc5"]
+[ext_resource type="Script" path="res://Shop/return.gd" id="8_vtowr"]
+[ext_resource type="Script" path="res://Shop/label4.gd" id="10_1w3qc"]
+[ext_resource type="Script" path="res://Shop/label5.gd" id="12_hddv3"]
 
-[sub_resource type="Gradient" id="Gradient_qf4o8"]
-offsets = PackedFloat32Array(0.455446)
-colors = PackedColorArray(0.686275, 0.584314, 0.411765, 1)
+[sub_resource type="Gradient" id="Gradient_0y1yb"]
+offsets = PackedFloat32Array(0, 0.118812)
+colors = PackedColorArray(0.457458, 0.166055, 0.057823, 1, 1, 0.709804, 0.403922, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_p8pom"]
-gradient = SubResource("Gradient_qf4o8")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mwvrl"]
+gradient = SubResource("Gradient_0y1yb")
 
 [node name="Shop" type="Node2D"]
-position = Vector2(7, 2)
-script = ExtResource("1_maxyw")
+position = Vector2(-7, 2)
 
-[node name="Background" type="TextureRect" parent="."]
-offset_left = -6.0
-offset_right = 1144.0
-offset_bottom = 648.0
-texture = SubResource("GradientTexture1D_p8pom")
-
-[node name="Capacitor" type="Sprite2D" parent="."]
-position = Vector2(135, 283)
-scale = Vector2(0.173971, 0.123158)
-
-[node name="BuyCapacitor" type="Button" parent="Capacitor"]
-anchors_preset = -1
-anchor_left = -0.388824
-anchor_top = 0.283325
-anchor_right = 296.611
-anchor_bottom = 675.283
-offset_left = 552.206
-offset_top = -170.795
-offset_right = 1313.21
-offset_bottom = 72.2045
-theme_override_font_sizes/font_size = 100
-text = "capacitors - $25"
-script = ExtResource("2_ggtx8")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 651.0
+texture = SubResource("GradientTexture1D_mwvrl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Resistor" type="Sprite2D" parent="."]
+[node name="WireA" type="Sprite2D" parent="."]
+position = Vector2(426, 133)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(0, 192, 32, 32)
 
-[node name="BuyResistor" type="Button" parent="Resistor"]
+[node name="Button" type="Button" parent="WireA"]
 anchors_preset = -1
-anchor_top = 3.0
-anchor_right = 82.0
-anchor_bottom = 73.0
-offset_left = 464.0
-offset_top = 340.0
-offset_right = 580.0
-offset_bottom = 384.0
-text = "resistors - $50"
-script = ExtResource("3_bikik")
+anchor_left = -0.00625026
+anchor_top = -0.0125
+anchor_right = 0.0874997
+anchor_bottom = 0.1125
+offset_left = -40.4
+offset_top = -10.6
+offset_right = -21.4
+offset_bottom = 6.4
+theme_override_font_sizes/font_size = 17
+script = ExtResource("2_1hpsh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Wire" type="Sprite2D" parent="."]
+[node name="Label" type="Label" parent="WireA/Button"]
+offset_left = 1.59999
+offset_top = -2.0
+offset_right = 20.6
+offset_bottom = 21.0
+text = "25"
 
-[node name="BuyWire" type="Button" parent="Wire"]
+[node name="CapacitorA" type="Sprite2D" parent="."]
+position = Vector2(423, 318)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(0, 160, 32, 32)
+
+[node name="Button" type="Button" parent="CapacitorA"]
 anchors_preset = -1
-anchor_right = 98.0
-anchor_bottom = 64.0
-offset_left = 461.0
-offset_top = 191.0
-offset_right = 563.0
-offset_bottom = 238.0
-text = "Wire - $80"
-script = ExtResource("4_ucg5g")
+anchor_right = 0.09375
+anchor_bottom = 0.15625
+offset_left = -41.6
+offset_top = -11.2
+offset_right = -22.6
+offset_bottom = 5.8
+script = ExtResource("3_ma4ri")
 metadata/_edit_use_anchors_ = true
 
-[node name="healingP" type="Sprite2D" parent="."]
+[node name="Label" type="Label" parent="CapacitorA/Button"]
+offset_left = 1.59999
+offset_top = -1.6
+offset_right = 20.6
+offset_bottom = 21.4
+text = "25"
 
-<<<<<<< v5
-[node name="BuyHP" type="Button" parent="healingP"]
+[node name="ResistorA" type="Sprite2D" parent="."]
+position = Vector2(424, 498)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(0, 128, 32, 32)
+
+[node name="Button" type="Button" parent="ResistorA"]
 anchors_preset = -1
-anchor_right = 49.0
-anchor_bottom = 71.0
-offset_left = 718.0
-offset_top = 341.0
-offset_right = 873.0
-offset_bottom = 389.0
-text = "Health Potion - $25"
-script = ExtResource("5_lm24m")
+anchor_left = -0.00625002
+anchor_top = 0.00625002
+anchor_right = 0.0875
+anchor_bottom = 0.1625
+offset_left = -41.6
+offset_top = -10.6
+offset_right = -22.6
+offset_bottom = 6.4
+script = ExtResource("4_tli3u")
 metadata/_edit_use_anchors_ = true
 
-[node name="attackP" type="Sprite2D" parent="."]
+[node name="Label" type="Label" parent="ResistorA/Button"]
+offset_left = 1.6
+offset_top = -1.6
+offset_right = 20.6
+offset_bottom = 21.4
+text = "25"
 
-[node name="BuyCP" type="Button" parent="attackP"]
-anchors_preset = -1
-anchor_top = -6.0
-anchor_right = 41.0
-anchor_bottom = 67.0
-offset_left = 724.0
-offset_top = 203.0
-offset_right = 877.0
-offset_bottom = 248.0
-text = "Attack Potion - $75"
-script = ExtResource("6_b6n6m")
+[node name="AP" type="Sprite2D" parent="."]
+position = Vector2(623, 510)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(128, 192, 32, 32)
+
+[node name="Button" type="Button" parent="AP"]
+offset_left = -15.6
+offset_top = -28.8
+offset_right = 14.4
+offset_bottom = -17.8
+script = ExtResource("5_r1087")
 metadata/_edit_use_anchors_ = true
 
-[node name="Amount" type="Label" parent="."]
-offset_left = 787.0
-offset_top = 9.0
-offset_right = 1128.0
-offset_bottom = 146.0
-theme_override_font_sizes/font_size = 50
-script = ExtResource("7_7pkjg")
+[node name="Label" type="Label" parent="AP/Button"]
+offset_left = 2.8
+offset_top = -11.2
+offset_right = 21.8
+offset_bottom = 11.8
+text = "10"
+
+[node name="HP" type="Sprite2D" parent="."]
+position = Vector2(799, 510)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(128, 160, 32, 32)
+
+[node name="Button" type="Button" parent="HP"]
+offset_left = -14.8
+offset_top = -29.4
+offset_right = 15.2
+offset_bottom = -17.4
+script = ExtResource("6_7jxc5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HP/Button"]
+offset_left = 5.19998
+offset_top = -7.39999
+offset_right = 24.2
+offset_bottom = 15.6
+text = "10"
+
+[node name="WireB" type="Sprite2D" parent="."]
+position = Vector2(1023, 150)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(32, 192, 32, 32)
+
+[node name="Label" type="Label" parent="WireB"]
+offset_left = 22.0
+offset_top = -13.0
+offset_right = 48.0
+offset_bottom = 10.0
+script = ExtResource("2_tjoeb")
+
+[node name="CapacitorB" type="Sprite2D" parent="."]
+position = Vector2(1023, 246)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(32, 160, 32, 32)
+
+[node name="Label" type="Label" parent="CapacitorB"]
+offset_left = 25.6
+offset_top = -9.60001
+offset_right = 44.6
+offset_bottom = 13.4
+text = "25"
+script = ExtResource("4_2wwy1")
+
+[node name="ResistorB" type="Sprite2D" parent="."]
+position = Vector2(1023, 342)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(32, 128, 32, 32)
+
+[node name="Label" type="Label" parent="ResistorB"]
+offset_left = 22.4
+offset_top = -9.6
+offset_right = 48.4
+offset_bottom = 13.4
+script = ExtResource("6_7cjxo")
+
+[node name="HP2" type="Sprite2D" parent="."]
+position = Vector2(1031, 454)
+scale = Vector2(3, 3)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(128, 160, 32, 32)
+
+[node name="Label" type="Label" parent="HP2"]
+offset_left = 13.3333
+offset_top = -10.6667
+offset_right = 37.3333
+offset_bottom = 12.3333
+script = ExtResource("10_1w3qc")
+
+[node name="AP2" type="Sprite2D" parent="."]
+position = Vector2(1031, 566)
+scale = Vector2(3, 3)
+texture = ExtResource("1_nsxot")
+region_enabled = true
+region_rect = Rect2(128, 192, 32, 32)
+
+[node name="Label" type="Label" parent="AP2"]
+offset_left = 16.0
+offset_top = -10.6667
+offset_right = 40.0
+offset_bottom = 12.3333
+script = ExtResource("12_hddv3")
+
+[node name="AmountLabel" type="Label" parent="."]
+offset_left = 543.0
+offset_top = 62.0
+offset_right = 949.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("2_6rwob")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
-offset_left = 9.0
-offset_top = 534.0
-offset_right = 151.0
-offset_bottom = 625.0
-text = "BACK TO THE OVERWORLD"
+offset_left = 59.0
+offset_top = 45.0
+offset_right = 143.0
+offset_bottom = 580.0
+text = "<=
+BACK
+<="
+script = ExtResource("8_vtowr")
+metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 13.0
-offset_top = 83.0
-offset_right = 192.0
-offset_bottom = 493.0
-text = "History:"
-
-[connection signal="pressed" from="Capacitor/BuyCapacitor" to="Capacitor/BuyCapacitor" method="_on_pressed"]
-[connection signal="pressed" from="Resistor/BuyResistor" to="Resistor/BuyResistor" method="_on_pressed"]
-[connection signal="pressed" from="Wire/BuyWire" to="Wire/BuyWire" method="_on_pressed"]
-[connection signal="pressed" from="healingP/BuyHP" to="healingP/BuyHP" method="_on_pressed"]
-[connection signal="pressed" from="attackP/BuyCP" to="attackP/BuyCP" method="_on_pressed"]
-=======
->>>>>>> main
+[connection signal="pressed" from="WireA/Button" to="WireA/Button" method="_on_pressed"]
+[connection signal="pressed" from="CapacitorA/Button" to="CapacitorA/Button" method="_on_pressed"]
+[connection signal="pressed" from="ResistorA/Button" to="ResistorA/Button" method="_on_pressed"]
+[connection signal="pressed" from="AP/Button" to="AP/Button" method="_on_pressed"]
+[connection signal="pressed" from="HP/Button" to="HP/Button" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
