@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdb4on5m367nr"]
+[gd_scene load_steps=10 format=3 uid="uid://cdb4on5m367nr"]
 
 [ext_resource type="Texture2D" uid="uid://6s0m21rfhs6" path="res://Assets/Overworld Tile Sheet.png" id="1_ep0af"]
 [ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="2_yb08a"]
 [ext_resource type="PackedScene" uid="uid://8l42btsgqhrg" path="res://Shop/Shop Exterior.tscn" id="3_qrg8x"]
 [ext_resource type="PackedScene" uid="uid://bb0gw8q5w1syq" path="res://Characters/MC.tscn" id="4_qnkuh"]
 [ext_resource type="Texture2D" uid="uid://bcvlf6pgma6ny" path="res://Assets/catpray.jpg" id="5_7mrwc"]
+[ext_resource type="PackedScene" uid="uid://dqs886r2cqwra" path="res://Characters/NPC.tscn" id="6_3glqr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xr3q"]
 texture = ExtResource("1_ep0af")
@@ -120,3 +121,6 @@ position = Vector2(128, 64)
 position = Vector2(-48, 208)
 scale = Vector2(0.12377, 0.121185)
 texture = ExtResource("5_7mrwc")
+
+[node name="Npc" parent="." instance=ExtResource("6_3glqr")]
+position = Vector2(768, 272)

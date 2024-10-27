@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqs886r2cqwra"]
 
 [ext_resource type="Script" path="res://Characters/character_body_2d.gd" id="1_2or8k"]
-[ext_resource type="Texture2D" path="res://Assets/Onion.png" id="2_6e4o6"]
+[ext_resource type="Texture2D" uid="uid://dlqqete2g0x1a" path="res://Assets/Onion.png" id="2_6e4o6"]
 
 [sub_resource type="Animation" id="Animation_1gr37"]
 resource_name = "Onion Idle"
