@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://qyn05alnhe1n"]
+
+[ext_resource type="Texture2D" uid="uid://dn238584gp7do" path="res://Assets/Shop Items and Store.png" id="1_75hci"]
+[ext_resource type="Script" path="res://Shop/label.gd" id="2_b7f7y"]
+[ext_resource type="Script" path="res://Shop/label2.gd" id="3_d8xv5"]
+[ext_resource type="Script" path="res://Shop/label3.gd" id="4_j86vy"]
+[ext_resource type="Script" path="res://Shop/label4.gd" id="5_damof"]
+[ext_resource type="Script" path="res://Shop/label5.gd" id="6_5xqb3"]
+[ext_resource type="Texture2D" uid="uid://cubssgucxojv" path="res://Assets/resistor.png" id="7_lxqch"]
+[ext_resource type="Script" path="res://Battle/object.gd" id="7_nrlmx"]
+
+[node name="Battle2" type="Node2D"]
+
+[node name="WireB" type="Sprite2D" parent="."]
+position = Vector2(82.0001, 123)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_75hci")
+region_enabled = true
+region_rect = Rect2(32, 192, 32, 32)
+
+[node name="Label" type="Label" parent="WireB"]
+offset_left = 22.0
+offset_top = -13.0
+offset_right = 48.0
+offset_bottom = 10.0
+script = ExtResource("2_b7f7y")
+metadata/_edit_use_anchors_ = true
+
+[node name="CapacitorB" type="Sprite2D" parent="."]
+position = Vector2(82.0001, 219)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_75hci")
+region_enabled = true
+region_rect = Rect2(32, 160, 32, 32)
+
+[node name="Label" type="Label" parent="CapacitorB"]
+offset_left = 25.6
+offset_top = -9.60001
+offset_right = 44.6
+offset_bottom = 13.4
+text = "25"
+script = ExtResource("3_d8xv5")
+metadata/_edit_use_anchors_ = true
+
+[node name="ResistorB" type="Sprite2D" parent="."]
+position = Vector2(82.0001, 315)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_75hci")
+region_enabled = true
+region_rect = Rect2(32, 128, 32, 32)
+
+[node name="Label" type="Label" parent="ResistorB"]
+offset_left = 22.4
+offset_top = -9.6
+offset_right = 48.4
+offset_bottom = 13.4
+script = ExtResource("4_j86vy")
+metadata/_edit_use_anchors_ = true
+
+[node name="HP2" type="Sprite2D" parent="."]
+position = Vector2(90, 427)
+scale = Vector2(3, 3)
+texture = ExtResource("1_75hci")
+region_enabled = true
+region_rect = Rect2(128, 160, 32, 32)
+
+[node name="Label" type="Label" parent="HP2"]
+offset_left = 13.3333
+offset_top = -10.6667
+offset_right = 37.3333
+offset_bottom = 12.3333
+script = ExtResource("5_damof")
+metadata/_edit_use_anchors_ = true
+
+[node name="AP2" type="Sprite2D" parent="."]
+position = Vector2(90, 539)
+scale = Vector2(3, 3)
+texture = ExtResource("1_75hci")
+region_enabled = true
+region_rect = Rect2(128, 192, 32, 32)
+
+[node name="Label" type="Label" parent="AP2"]
+offset_left = 16.0
+offset_top = -10.6667
+offset_right = 40.0
+offset_bottom = 12.3333
+script = ExtResource("6_5xqb3")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 651.0
+
+[node name="object" type="Sprite2D" parent="."]
+position = Vector2(429, 184)
+texture = ExtResource("7_lxqch")
+script = ExtResource("7_nrlmx")
