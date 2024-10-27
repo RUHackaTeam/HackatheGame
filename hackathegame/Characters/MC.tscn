@@ -295,13 +295,13 @@ shape = SubResource("CapsuleShape2D_v51hw")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1, 2)
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 
 [node name="Account" type="Label" parent="CharacterBody2D/Camera2D"]
-offset_left = 71.0
-offset_top = -78.0
-offset_right = 140.0
-offset_bottom = -55.0
+offset_left = 112.0
+offset_top = -96.0
+offset_right = 181.0
+offset_bottom = -73.0
 text = "Account: "
 label_settings = SubResource("LabelSettings_55umh")
 script = ExtResource("2_k7l1s")

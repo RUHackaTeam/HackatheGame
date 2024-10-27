@@ -124,3 +124,15 @@ texture = ExtResource("5_7mrwc")
 
 [node name="Npc" parent="." instance=ExtResource("6_3glqr")]
 position = Vector2(768, 272)
+
+[node name="Npc2" parent="." instance=ExtResource("6_3glqr")]
+position = Vector2(400, 32)
+
+[node name="Npc3" parent="." instance=ExtResource("6_3glqr")]
+position = Vector2(336, 128)
+
+[node name="Npc4" parent="." instance=ExtResource("6_3glqr")]
+position = Vector2(368, 304)
+
+[node name="Npc5" parent="." instance=ExtResource("6_3glqr")]
+position = Vector2(176, 272)
